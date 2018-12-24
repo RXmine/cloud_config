@@ -1,0 +1,26 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: springcloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+zuul:
+  ignored-services: springcloud-dept
+  prefix: /yaorange  
+  routes: 
+    mydept.serviceId: springcloud-dept
+    mydept.path: /mydept/** 
+info: 
+  app.name: yaorange-microservicecloud
+  company.name: www.qiangge.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$    
+
