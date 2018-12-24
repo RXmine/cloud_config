@@ -13,10 +13,10 @@ eureka:
     instance-id: gateway-9527.com
     prefer-ip-address: true 
 zuul:
-  ignored-services: springcloud-dept
+  ignored-services: service-provider
   prefix: /yaorange  
   routes: 
-    mydept.serviceId: springcloud-dept
+    mydept.serviceId: service-provider
     mydept.path: /mydept/** 
 info: 
   app.name: yaorange-microservicecloud
